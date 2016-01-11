@@ -35,7 +35,7 @@ TARGET_BOOTANIMATION_SIZE := 1080x720
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/oppo/find7op/device.mk)
+$(call inherit-product, device/oppo/onyx/device.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := omni_onyx

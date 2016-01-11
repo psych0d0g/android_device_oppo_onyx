@@ -38,22 +38,22 @@ $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, device/oppo/find7op/device.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := omni_find7op
-PRODUCT_DEVICE := find7op
+PRODUCT_NAME := omni_onyx
+PRODUCT_DEVICE := onyx
 PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := A0001
+PRODUCT_MODEL := ONYX
 PRODUCT_MANUFACTURER := OnePlus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_PRODUCT=FIND7OP \
-    TARGET_DEVICE=A0001 \
+    BUILD_PRODUCT=ONYX \
+    TARGET_DEVICE=ONYX \
     BUILD_FINGERPRINT="4.3/JLS36C/1390465867:user/release-keys" \
     PRIVATE_BUILD_DESC="msm8974-user 4.3 JLS36C eng.root.20140510.152835 release-keys"
 
 # Inline kernel
 TARGET_KERNEL_SOURCE := kernel/oppo/msm8974
-TARGET_KERNEL_CONFIG := msm8974_find7op_defconfig
+TARGET_KERNEL_CONFIG := opx_defconfig
 
 # Inherit from proprietary blobs
-$(call inherit-product, vendor/oppo/find7a/find7a-vendor.mk)
+$(call inherit-product, vendor/oppo/onyx/onyx-vendor.mk)
 

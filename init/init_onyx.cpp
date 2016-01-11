@@ -1,5 +1,5 @@
 /*
-   Copyright (c) 2013, The Linux Foundation. All rights reserved.
+   Copyright (c) 2015, The CyanogenMod Project
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -26,7 +26,6 @@
    OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <sys/types.h>
@@ -42,20 +41,26 @@ static void process_cmdline(char *name, int for_emulator)
 {
     char *value = strchr(name, '=');
     int name_len = strlen(name);
-    int pcb_version;
+    int rf_version;
 
     if (value == 0) return;
     *value++ = 0;
     if (name_len == 0) return;
 
-    if (!strcmp(name,"oppo.pcb_version")) {
-        pcb_version = atoi(value);
-        if(pcb_version < 20) {
-            property_set("ro.sf.lcd_density", "480");
-            property_set("ro.oppo.device", "find7a");
-        } else {
-            property_set("ro.sf.lcd_density", "640");
-            property_set("ro.oppo.device", "find7s");
+    if (!strcmp(name,"ro.boot.rf_version")) {
+        rf_version = atoi(value);
+        if(rf_version == 101) {
+            // Chinese
+            property_set("ro.product.model", "ONE E1001");
+            property_set("ro.rf_version", "TDD_FDD_Ch_All");
+        } else if(rf_version == 102) {
+            /* Asia/Europe */
+            property_set("ro.product.model", "ONE E1003");
+            property_set("ro.rf_version", "TDD_FDD_Eu");
+        } else if(rf_version == 102) {
+            /* America */
+            property_set("ro.product.model", "ONE E1005");
+            property_set("ro.rf_version", "TDD_FDD_Am");
         }
     }
 }

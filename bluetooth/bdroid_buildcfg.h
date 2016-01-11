@@ -17,7 +17,14 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "Oppo Find 7 OnePlus Edition"
+#define BLUETOOTH_QTI_SW TRUE
+
+#define BTM_DEF_LOCAL_NAME   "OnePlus X"
+#define MAX_ACL_CONNECTIONS 7
+#define MAX_L2CAP_CHANNELS  16
+
+#define BTA_SKIP_BLE_READ_REMOTE_FEAT TRUE
+#define BTA_BLE_SKIP_CONN_UPD  TRUE
 #define BTA_DISABLE_DELAY 1000 /* in milliseconds */
 
 #endif

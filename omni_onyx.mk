@@ -54,6 +54,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 TARGET_KERNEL_SOURCE := kernel/oppo/msm8974
 TARGET_KERNEL_CONFIG := opx_defconfig
 
+	PRODUCT_COPY_FILES += \
+		$(LOCAL_PATH)/dt.img:dt.img
+
 # Inherit from proprietary blobs
 $(call inherit-product, vendor/oppo/onyx/onyx-vendor.mk)
 

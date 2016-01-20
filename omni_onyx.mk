@@ -46,9 +46,12 @@ PRODUCT_MANUFACTURER := OnePlus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_PRODUCT=ONYX \
-    TARGET_DEVICE=ONYX \
+    TARGET_DEVICE=ONE \
     BUILD_FINGERPRINT="4.3/JLS36C/1390465867:user/release-keys" \
-    PRIVATE_BUILD_DESC="msm8974-user 4.3 JLS36C eng.root.20140510.152835 release-keys"
+    PRIVATE_BUILD_DESC="msm8974-user 4.3 JLS36C eng.root.20140510.152835 release-keys" \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.usb.config=mtp,adb
 
 # Inline kernel
 TARGET_KERNEL_SOURCE := kernel/oppo/msm8974

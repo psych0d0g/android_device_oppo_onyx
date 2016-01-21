@@ -14,6 +14,10 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1388314624
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+#kernel
+
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=onyx androidboot.selinux=permissive user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
+
 #dt.img
 BOARD_MKBOOTIMG_ARGS := --dt $(LOCAL_PATH)/dt.img
 
